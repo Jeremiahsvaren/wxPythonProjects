@@ -18,6 +18,10 @@ class simple(wx.Frame):
         quit = fileMenu.Append(wx.ID_EXIT, 'Quit', 'Quit application')
         menuBar.Append(fileMenu, '&File')
 
+        toolbar = self.CreateToolBar()
+        addTask = toolbar.AddLabelTool(wx.ID_ANY, 'Add Task', wx.Bitmap('images/add-icon.png'))
+        delTask = toolbar.AddLabelTool(wx.ID_ANY, 'Delete Task', wx.Bitmap('images/cancel-icon.png'))
+        toolbar.Realize()
 
         self.SetMenuBar(menuBar)
 
