@@ -35,11 +35,31 @@ class simple(wx.Frame):
         self.Show(True)
 
     def OnAdd(self, event):
-        self.Close() #Need this to open another window to add a task
+        newTaskWindow().Show()
 
 
     def OnQuit(self, event):
         self.Close()
+
+
+class newTaskWindow(wx.Frame):
+
+    title = "Add a new task."
+
+    def __init__(self):
+        wx.Frame.__init__(self, wx.GetApp().TopWindow, title=self.title)
+
+        self.SetSize((400, 200))
+        self.Centre()
+
+    # def GetTask(self):
+    #     task = wx.TextEntryDialog(self.panel, "What's the task?", 'Task-Maker', "",
+    #                               style=wx.OK)
+    #     task.ShowModal()
+    #     self.txt.SetValue(task.GetValue())
+    #     task.Destory()
+
+
 
 
 def main():
