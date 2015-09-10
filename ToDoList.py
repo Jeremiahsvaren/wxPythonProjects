@@ -26,13 +26,19 @@ class simple(wx.Frame):
         self.SetMenuBar(menuBar)
 
         self.Bind(wx.EVT_MENU, self.OnQuit, quit)
+        self.Bind(wx.EVT_TOOL, self.OnAdd, addTask)
+
 
         self.SetSize((350, 600))
         self.SetTitle('Simple To Do List')
         self.Centre()
         self.Show(True)
 
-    def OnQuit(self, e):
+    def OnAdd(self, event):
+        self.Close() #Need this to open another window to add a task
+
+
+    def OnQuit(self, event):
         self.Close()
 
 
