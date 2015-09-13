@@ -35,7 +35,7 @@ class simple(wx.Frame):
 
         #Creates toolbar
         toolbar = self.CreateToolBar()
-        toolbar.Realize()
+
 
         #This is the tool which opens a new frame,
         #allowing users to add new tasks.
@@ -45,6 +45,7 @@ class simple(wx.Frame):
         #This will allow users to delete tasks.
         delTask = toolbar.AddLabelTool(wx.ID_ANY, 'Delete Task', wx.Bitmap('images/cancel-icon.png'))
 
+        toolbar.Realize()
 
 
 
